@@ -1,0 +1,570 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
+
+html,body{
+    height: 100%;
+    background-color: rgb(186, 226, 185);
+}
+
+    /*pagina de login */
+
+.box-login{
+    max-width: 600px;
+    width: 95%;
+    padding: 60px 2%;
+    background: #d2d2d6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 19px 20px 0px -4px rgba(0,0,0,0.1);
+    border-radius: 30px;
+}
+
+.box-login h2{
+    text-align: center;
+    font-size: 19px;
+    color: black;
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    
+}
+
+.box-login input[type=text],
+.box-login input[type=password]{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    padding-left:8px ;
+    margin-top: 8px;
+}
+
+.box-login input[type=submit]{
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 8px;
+    background: #1de9b6;
+    color: black;
+    font-size: 16px;
+    border: 0;
+}
+
+.box-login input[type=submit]:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.box-login input[type=submit]:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/*Erro painel */
+
+.erro-box{
+    padding: 100%;
+    padding: 6px 2%;
+    text-align: center;
+    background: #f75353;
+    color: white;
+    font-size: 15px;
+}
+
+/*pagina de login */
+
+.clear{
+    clear: both;
+}
+
+.center{
+    
+    padding: 0 1.5%;
+    margin: 0 auto;
+}
+
+
+
+header{
+    width: calc(100% - 300px);
+   
+    background: #78909c;
+    position: relative;
+    left: 300px;
+   
+
+}
+.loggout{
+    float: right;
+}
+
+.pg_inicial{
+    padding: 10px 3px;
+    
+}
+
+.pg_sair{
+ padding: 10px 3px;
+}
+
+.pg_inicial:hover,
+.pg_sair:hover{
+    height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.pg_inicial:active,
+.pg_sair:active{
+    
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.loggout a{
+    color: white;
+    font-size: 20px;
+    text-decoration:none;
+    padding: 0 19px;
+}
+
+.loggout a > span{
+    font-size: 20px;
+}
+
+
+
+.menu-btn{
+    float: left;
+    cursor: pointer;
+    font-size: 23px;
+    color: white;
+    padding: 10px 0;
+}
+
+/* .menu-wraper{
+    width: 300px;
+} */
+
+.menu{
+    padding: 10px 0;
+    height: 100%;
+    width: 300px;
+    float: left;
+    background: #607d8b;
+    overflow-x: hidden;
+    overflow-y:auto ;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.box-usuario{
+    text-align: center;
+}
+
+.avatar-usuario{
+    text-align: left;
+    border:3px solid #2f3d42 ;
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+.avatar-usuario i{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    font-size: 50px;
+    color: #2f3d42 ;
+}
+
+.imagem-usuario{
+    display: inline-block;
+    width: 130px; 
+    height: 130px;
+    position: relative;
+    border-radius: 50%;
+    border:3px solid #2f3d42 ;
+}
+.imagem-usuario img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+}
+
+.nome-usuario{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.nome-usuario p {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    
+}
+/* conteudo principal do painel */
+
+
+
+.w100{
+    width: 100%;
+}
+
+.w50{
+    width: 48%;
+    
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+.content{
+    width: calc(100% - 300px);
+    position: relative;
+    left: 300px;
+    padding: 10px;
+}
+
+.box-content{
+
+    background: white;
+    padding: 10px;
+    margin-bottom:25px ;
+}
+
+.itens-menu{
+    margin-top: 30px;
+}
+
+.itens-menu h2{
+    text-align: left;
+    font-weight: 300;
+    font-size: 18px;
+    background:#2f3d42 ;
+    color: white ;
+    padding: 8px;
+}
+
+.itens-menu a{
+    display: block;
+    padding: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid #2f3d42;
+}
+
+.itens-menu a:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.itens-menu a:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+.box-metricas{
+	margin-top:16px;
+	padding:0 15px;
+}
+
+.box-metrica-single{
+	float: left;
+	position: relative;
+	width: 33.3%;
+	background: #F4B03E;
+	border: 5px solid white;
+}
+
+.box-metricas .box-metrica-single:nth-of-type(2){
+	background: #E05C4E;
+}
+
+.box-metricas .box-metrica-single:nth-of-type(3){
+	background: #0091ea;
+}
+
+.box-metrica-wraper{
+	padding: 10px 20px;
+	text-align: left;
+	color: white;
+}
+
+.box-metrica-wraper h2{
+	font-size: 28px;
+    
+}
+
+.box-metrica-wraper p{
+	padding: 10px 0;
+	font-size: 26px;
+    
+}
+
+
+/* Tabela responsiva */
+
+.table-responsive{
+    max-width: 1280px;
+    margin:20px auto;
+}
+
+.table-responsive .row:nth-of-type(1){
+    font-weight: bold;
+    border-bottom: 3px solid #333;
+}
+
+.table-responsive .row{
+    
+    color: #777;
+    padding: 8px 0;
+}
+
+.col{
+    float: left;
+    width: 50%;
+}
+
+.box-content form{
+    margin: 30px 0;
+}
+.box-content .form-group{
+    margin: 15px 0;
+}
+
+.box-content form label{
+    font-size: 17px;
+    font-weight: 300;
+    color: black;
+    display: block;
+}
+
+.box-content form input[type=text]{
+    margin-top:8px ;
+    font-size: 16px;
+    font-weight: normal ;
+    color: black;
+    width: 100%;
+    height: 40px;
+    padding-left: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+.box-content form textarea{
+    margin-top:8px ;
+    font-size: 16px;
+    font-weight: normal ;
+    color: black;
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    resize: vertical;
+}
+
+
+.box-content form input[type=password],
+.box-content form select{
+    margin-top:8px ;
+    font-size: 16px;
+    font-weight: normal ;
+    color: black;
+    width: 100%;
+    height: 40px;
+    padding-left: 8px;
+}
+
+.box-content form input[type=file]{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.box-content form input[type=submit]{
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 8px;
+    background: #1de9b6;
+    color: black;
+    font-size: 16px;
+    border: 0;
+}
+
+.box-content form input[type=submit]:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.box-content form input[type=submit]:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* box de alerta */
+
+.box-alert{
+    width: 100%;
+    padding: 15px 0;
+}
+
+.sucesso{
+    text-align: center;
+    background: #28ca41;
+    color: white;
+}
+
+.erro{
+    text-align: center;
+    background: #d7321c;
+    color: white;
+}
+
+.menu-active{
+    background-color: #0091ea;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
+.form-group-login:nth-of-type(2){
+    position: relative;
+    top: 10px;
+}
+
+.form-group-login label{
+    font-size: 13px;
+    padding-right: 6px;
+    font-weight: 300;
+    color: black;
+}
+
+.form-group-login input[type=checkbox]{
+    margin-top: 3px;
+    padding: 15px;
+}
+
+/* Tabelas */
+
+.wraper-table{
+    overflow-x: auto;
+}
+
+table{
+    min-width: 900px;
+    margin: 20px 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr:nth-of-type(1){
+    background: #0091ea;
+    color: white;
+
+}
+
+table td{
+    padding: 8px;
+}
+
+table tr{
+    color: #555;
+    border-bottom: 1px solid #ccc;
+}
+
+table a.btn-edit{
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 4px;
+    margin-left: 4px;
+    background: #F4B03E;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+table a.btn-edit:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+table a.btn-edit:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+table a.btn-delete{
+    text-decoration: none;
+    padding: 0 4px;
+    margin-left: 4px;
+    background: #E05C4E;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    
+}
+
+table a.btn-delete:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+table a.btn-delete:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* paginação */
+
+.paginacao{
+    margin: 20px 0 ;
+    text-align: center;
+}
+
+.paginacao a{
+    font-size: 14px;
+    margin:0 8px;
+    display: inline-block;
+    padding: 3px 4px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #666;
+}
+
+.paginacao a.page-selected{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.btn-order{
+    color: black;
+    
+}
+
+@media screen and (max-width: 1024px){
+    .box-metrica-single{
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    
+    .content{
+        width: 100%;
+        left: 0;
+    }
+    header{
+        left: 0;
+        width: 100%;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
+    
+}
+
