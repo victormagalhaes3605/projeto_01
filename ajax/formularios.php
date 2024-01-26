@@ -8,7 +8,7 @@ include('../config.php');
         $corpo.="<hr>";
     }
     $info = array('assunto'=>$assunto,'corpo'=>$corpo);
-    $mail = new Email('smtp.titan.email','admin@victorwagner.com.br','V@magalhaes15','victor');
+    $mail = new Email('smtp.titan.email','admin@victorwagner.com.br','...','victor');
     $mail->addAdress('admin@victorwagner.com.br','victor');
     $mail->formatarEmail($info);
      if($mail->enviarEmail()){
