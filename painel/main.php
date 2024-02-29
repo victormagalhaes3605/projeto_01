@@ -8,14 +8,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Painel de controle</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de controle</title>
-    <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/css/default/zebra_datepicker.min.css">
+    <link href="<?php echo INCLUDE_PATH; ?>estilo/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo INCLUDE_PATH_PAINEL ?>css/jquery-ui.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="<?php INCLUDE_PATH_PAINEL ?>css/style.css" rel="stylesheet">
+    <link href="<?php echo INCLUDE_PATH_PAINEL ?>css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
+
+<base base="<?php echo INCLUDE_PATH_PAINEL; ?>"/>
     <div class="menu">
     <div class="menu-wraper">
     
@@ -57,6 +63,18 @@
                 <a <?php selecionadoMenu('gerenciar-categorias') ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-categorias">Gerenciar Categorias</a>
                 <a <?php selecionadoMenu('cadastrar-noticias') ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-noticias">Cadastrar Notícias</a>
                 <a <?php selecionadoMenu('gerenciar-noticias') ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-noticias">Gerenciar Notícias</a>
+                <h2>Gestão de clientes</h2>
+                <a <?php selecionadoMenu('cadastrar-clientes') ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-clientes">Cadastrar clientes</a>
+                <a <?php selecionadoMenu('gerenciar-clientes') ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-clientes">Gerenciar clientes</a>
+                <h2>Controle finaceiro</h2>
+                <a <?php selecionadoMenu('visualizar-pagamentos') ?> href="<?php echo INCLUDE_PATH_PAINEL ?>visualizar-pagamentos">Visualizar pagamentos</a>
+                <h2>Controle Estoque</h2>
+                <a <?php selecionadoMenu('cadastrar-produtos') ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-produtos">Cadastrar produtos</a>
+                <a <?php selecionadoMenu('visualizar-produtos') ?> href="<?php echo INCLUDE_PATH_PAINEL ?>visualizar-produtos">Visualizar produtos</a>
+                <h2>Gestão Imovéis</h2>
+                <a <?php selecionadoMenu('cadastrar-empreendimento') ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-empreendimento">Cadastrar empreendimento</a>
+                <a <?php selecionadoMenu('listar-empreendimentos') ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-empreendimentos">Visualizar empreendimentos</a>
+
         </div><!--itens menu-->
     </div><!--menu-wrapper-->    
     </div><!--menu-->
@@ -82,14 +100,27 @@
 
         <div class="content">
 
-              <?php Painel::carregarPagina(); ?>
+              <?php
+
+                Painel::carregarPagina();
+
+              
+               
+                ?>
 
 
         </div><!--content-->
         
 <script src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
+<?php Painel::loadJs(array('jquery-ui.min.js'),'listar-empreendimentos'); ?>
+<script src="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/zebra_datepicker.min.js"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/jquery.mask.js"></script>    
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/jquery.maskMoney.js"></script>    
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/jquery.ajaxform.js"></script>    
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/main.js"></script>  
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/empreendimentos.js"></script>  
+<script src="<?php echo INCLUDE_PATH; ?>js/constants.js"></script>
+
 <script src="https://cdn.tiny.cloud/1/5fq2vm7o6ex3bgfntioknn4thgge2z2vitr06rbdicrquopq/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>  
 <script>
   tinymce.init({
@@ -97,5 +128,12 @@
  
   });
 </script>
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/helperMask.js"></script> 
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/clientes.js"></script>  
+<?php Painel::loadJs(array('ajax.js'),'gerenciar-clientes'); ?>
+<?php Painel::loadJs(array('ajax.js'),'cadastrar-clientes'); ?>
+<?php Painel::loadJs(array('ajax.js'),'editar-cliente'); ?>
+<?php Painel::loadJs(array('controleFinanceiro.js'),'editar-cliente'); ?>
+
 </body>
 </html>

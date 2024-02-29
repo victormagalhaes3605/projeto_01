@@ -8,6 +8,16 @@
                 '2' => 'Administrador'
             ];
 
+
+            public static function loadJs($files,$page){
+                $url = explode('/',@$_GET['url'])[0];
+                if($page == $url){
+                    foreach ($files as $key => $value){
+                        echo ' <script src="'.INCLUDE_PATH_PAINEL.'js/'.$value.'"></script>';
+                    }
+                }
+            }
+
             public static function generateSlug($str){
                 $str = mb_strtolower($str);
                 $str = preg_replace('/(â|á|ã)/', 'a', $str);
@@ -40,13 +50,26 @@
                     if(file_exists('pages/'.$url[0].'.php')){
                         include('pages/'.$url[0].'.php');
                     }else{
-                        //Página não existe!
-                        header('Location: '.INCLUDE_PATH_PAINEL);
+                        //Sistema de rotas!
+                        
+                        if(Router::get('visualizar-empreendimento/?',function($par){
+                            include('views/visualizar-empreendimento.php');
+                        })){
+    
+                        }else if(Router::post('visualizar-empreendimento/?',function($par){
+                            include('views/visualizar-empreendimento.php');
+                        })){
+                        }else{
+                            header('Location: '.INCLUDE_PATH_PAINEL);
+                        }
+                        
                     }
                 }else{
                     include('pages/home.php');
                 }
             }
+    
+    
 
             public static function listarUsuariosOnline(){
                 self::limparUsuariosOnline();
@@ -65,7 +88,10 @@
                     echo '<div class="box-alert sucesso"> <i class="fa fa-check"></i>'.'   '. $mensagem.'</div>';
                 }else if($tipo == 'erro'){
                     echo '<div class="box-alert erro"> <i class="fa fa-times"></i>'.'   '.$mensagem.'</div>';
+                  }else if($tipo == 'atencao'){
+                    echo '<div class="box-alert atencao"> <i class="fa fa-times"></i>'.'   '.$mensagem.'</div>';
                 }
+
             }
 
             public static function imagemValida($imagem){
@@ -208,6 +234,17 @@
                     }
                 }
                 return $certo;
+            }
+
+            public static function selectQuery($table,$query = '',$arr = ''){
+                if($query != false){
+                    $sql = Msql::conectar()->prepare("SELECT * FROM `$table` WHERE $query");
+                    $sql->execute($arr);
+                }else{
+                    $sql = Msql::conectar()->prepare("SELECT * FROM `$table`");
+                    $sql->execute();
+                }
+                return $sql->fetchAll();
             }
 
 

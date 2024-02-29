@@ -5,11 +5,44 @@
     font-family: "Open Sans";
 }
 
-html,body{
-    height: 100%;
-    background-color: rgb(186, 226, 185);
+input[type=number]{
+    margin-top: 8px;
 }
 
+html,body{
+    height: 100%;
+    background-color: rgb(228, 228, 228);
+}
+
+.card-title{
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size:21px;
+    font-weight: lighter;
+    background: #0091ea;
+
+}
+
+.gerar-pdf a{
+    display: block;
+    margin: 8px 0;
+}
+
+.gerar-pdf a{
+    display: block;
+    width: 100px;
+    color: white;
+    padding: 3px 8px;
+    background: #e05c4e;
+    text-decoration: none;
+    margin-top: 3px;
+    border-radius: 10px;
+}
+
+i{
+    text-decoration: none;
+}
     /*pagina de login */
 
 .box-login{
@@ -21,7 +54,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    box-shadow: 19px 20px 0px -4px rgba(0,0,0,0.1);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 30px;
 }
 
@@ -36,6 +69,7 @@ html,body{
 }
 
 .box-login input[type=text],
+
 .box-login input[type=password]{
     width: 100%;
     height: 40px;
@@ -150,7 +184,7 @@ header{
     height: 100%;
     width: 300px;
     float: left;
-    background: #607d8b;
+    background: #5b6c75;
     overflow-x: hidden;
     overflow-y:auto ;
     position: fixed;
@@ -244,6 +278,10 @@ header{
     margin-bottom:25px ;
 }
 
+.box-content a{
+    text-decoration: none;
+}
+
 .itens-menu{
     margin-top: 30px;
 }
@@ -315,6 +353,8 @@ header{
 
 /* Tabela responsiva */
 
+
+
 .table-responsive{
     max-width: 1280px;
     margin:20px auto;
@@ -350,6 +390,8 @@ header{
     display: block;
 }
 
+
+.box-content form input[type=number],
 .box-content form input[type=text]{
     margin-top:8px ;
     font-size: 16px;
@@ -384,6 +426,7 @@ header{
     width: 100%;
     height: 40px;
     padding-left: 8px;
+    border: 1px solid #ccc;
 }
 
 .box-content form input[type=file]{
@@ -393,15 +436,31 @@ header{
 }
 
 .box-content form input[type=submit]{
-    width: 90px;
+    width: auto;
     height: 40px;
     cursor: pointer;
+    padding: 3px 8px;
     margin-top: 8px;
     background: #1de9b6;
     color: black;
     font-size: 16px;
     border: 0;
+    border-radius: 25px;
 }
+.busca form input[type=submit]{
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    padding: 3px 8px;
+    margin-top: 8px;
+    background: #1de9b6;
+    color: black;
+    font-size: 16px;
+    border: 0;
+    border-radius: 25px;
+}
+
+
 
 .box-content form input[type=submit]:hover{
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -415,6 +474,12 @@ header{
 .box-alert{
     width: 100%;
     padding: 15px 0;
+    margin-bottom:8px ;
+}
+
+.box-alert a{
+    color: #ed0000;
+    font-weight: bold;
 }
 
 .sucesso{
@@ -428,6 +493,13 @@ header{
     background: #d7321c;
     color: white;
 }
+
+.atencao{
+    text-align: center;
+    background: #f5f169;
+    color: rgb(0 0 0);
+}
+
 
 .menu-active{
     background-color: #0091ea;
@@ -450,6 +522,96 @@ header{
 .form-group-login input[type=checkbox]{
     margin-top: 3px;
     padding: 15px;
+}
+
+.group-btn{
+    position: relative;
+    bottom: 10px;
+}
+
+
+.group-btn a{
+   display: inline-block;
+   font-size: 15px;
+   margin-top: 8px;
+   padding: 3 8px;
+}
+
+a.btn-edit {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 4px;
+    margin-left: 4px;
+    background: #F4B03E;
+    border-radius: 50%;
+    
+    cursor: pointer;
+    color: black;
+}
+
+a.btn-delete{
+    color: rgb(64, 64, 64);
+    text-decoration: none;
+    padding: 0 4px;
+    margin-left: 4px;
+    background: #E05C4E;
+    border-radius: 50%;
+    
+    cursor: pointer;
+  
+}    
+
+a.btn-delete1{
+    color: rgb(64, 64, 64);
+    text-decoration: none;
+    padding: 0 4px;
+    margin-left: 4px;
+    background: #E05C4E;
+    border-radius: 50%;
+    
+    cursor: pointer;
+    
+}
+
+a.btn-delete{
+    color: rgb(64, 64, 64);
+    text-decoration: none;
+    padding: 0 4px;
+    margin-left: 4px;
+    background: #E05C4E;
+    border-radius: 50%;
+    
+    cursor: pointer;
+    
+}
+
+a.btn-email {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 4px;
+    margin-left: 4px;
+    background: #f4b13e;
+    border-radius: 10%;
+    
+    cursor: pointer;
+    color: black;
+}
+
+a.btn-check{
+    color: rgb(64, 64, 64);
+    text-decoration: none;
+    padding: 0 4px;
+    margin-left: 4px;
+    background: #00ca1e;
+    border-radius: 10%;
+   
+    cursor: pointer;
+    
+}
+
+a i{
+    position: relative;
+    bottom: 1px;
 }
 
 /* Tabelas */
@@ -489,6 +651,7 @@ table a.btn-edit{
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
+    color: black;
 }
 
 table a.btn-edit:hover{
@@ -500,6 +663,7 @@ table a.btn-edit:active{
 
 
 table a.btn-delete{
+    color: black;
     text-decoration: none;
     padding: 0 4px;
     margin-left: 4px;
@@ -534,6 +698,7 @@ table a.btn-delete:active{
     color: #666;
 }
 
+
 .paginacao a.page-selected{
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
@@ -543,16 +708,189 @@ table a.btn-delete:active{
     
 }
 
-@media screen and (max-width: 1024px){
+.boxes{
+    display: flex;
+    flex-wrap: wrap ;
+}
+
+.box-single-wraper{
+    width: 33.3%;
+    padding:20px;
+    
+}
+
+.borda{
+    height: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.box-single{
+    width: 100%;
+    
+    
+    border-radius: 10px;
+}
+
+.box-imgs {
+    width: 100%;
+    height: 80%;
+    margin: 0 auto;
+    text-align: center;
+  
+  
+
+}
+.box-imgs img{
+    width: 100%;
+    height: 80%;
+    padding: 0 10px;
+   
+
+
+}
+
+.box-imgs h1{
+    font-size: 50px;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section.produtos-div .box-imgss{
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section.produtos-div .box-imgss img {
+    width: 100%;
+   
+    padding: 0 10px;
+}
+
+section.produtos-div .body-box {
+    padding: 10px;
+    
+    margin-bottom: 79px;
+    height: 30%;
+}
+
+.box-imgs img.img-square{
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+.topo-box{
+    text-align: center;
+    color: #ccc;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    
+}
+
+.topo-box h2{
+    font-size: 36px;
+
+}
+
+.body-box{
+    padding: 10px;
+    position: relative;
+    bottom: 20px;
+}
+
+.body-box p{
+    color: #4f4f4f;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.topo-box img{
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+    border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.busca{
+    margin: 10px 0;
+    width: 100%;
+    padding: 8px 10px;
+    
+    border-radius: 15px;
+}
+
+.busca form{
+    font-size: 23px;
+    font-weight: lighter;
+    margin: 0;
+}
+
+.busca h4{
+    color: white;
+}
+
+.row1{
+    float: left;
+    width:30%;
+    padding: 8px 10px;
+}
+
+.row1 img{
+    width: 100%;
+    padding: 8px 0;
+}
+
+.row2{
+    float: left;
+    width:70%;
+    padding: 8px 10px;
+}
+
+.row2 p{
+    padding: 8px 0;
+    color: #646464;
+    border-bottom: 1px solid #ccc;
+}
+
+@media screen and (max-width: 1224px){
     .box-metrica-single{
         width: 100%;
     }
+    .box-single-wraper{
+        width: 100%;
+       
+    }
+
+    .borda {
+        height: 100%;
+        
+        
+    }
+    section.produtos-div .box-imgss img {
+     width: 50%; 
+    padding: 0 10px;
+    }
+    
+        
+    
+}
+
+.busca-result{
+    color: #646464;
+    border-top:3px solid #646464;
+}
+
+.busca-result p{
+    font-size: 14px;
 }
 
 
-
 @media screen and (max-width: 768px) {
-    
     .content{
         width: 100%;
         left: 0;
@@ -566,5 +904,27 @@ table a.btn-delete:active{
         overflow-x: hidden;
     }
     
+}
+
+
+@media screen and (max-width: 500px) {
+    .box-imgs{
+        width: 100% !important;
+    }
+
+    .box-single-wraper{
+        width: 100%;
+        
+    }
+
+    .box-single {
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .body-box{
+        position: relative;
+        bottom: 60px;
+    }
 }
 

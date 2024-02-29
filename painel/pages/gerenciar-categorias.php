@@ -57,16 +57,6 @@
     </div><!--wraper-table-->
 
      <div class="paginacao">
-		<?php
-			$totalPaginas = ceil(count(Painel::selectAll('tb_site.categorias')) / $porPagina);
-
-			for($i = 1; $i <= $totalPaginas; $i++){
-				if($i == $paginaAtual)
-					echo '<a class="page-selected" href="'.INCLUDE_PATH_PAINEL.'listar-categorias?pagina='.$i.'">'.$i.'</a>';
-				else
-					echo '<a href="'.INCLUDE_PATH_PAINEL.'listar-categorias?pagina='.$i.'">'.$i.'</a>';
-			}
-
-		?> 
+		
 	</div><!--paginacao-->
 </div><!--box-content-->
