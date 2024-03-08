@@ -2,157 +2,66 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-    
-    
+    font-family: "Open Sans";
 }
 
-.frente{
-    z-index: 90;
-}
+/* BOOT CSS */
 
-body{
-    
-}
-
-input{
+input[type=text],
+input[type=button],
+input[type=submit],
+input[type=password],
+textarea{
+    -webkit-appearance: none;
     border-radius: 0;
-    appearance: none;
-}
-
-/* body{
-    overflow-x: hidden;
-} */
-
-
-
-
-img{
-    
-    max-width: 500px;
-}
-.sucesso{
-    display: none;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    padding:15px 2%;
-    width: 300px;
-    z-index: 999;
-    color: #008000;
-    font-weight: bold;
-    font-size: 14px;
-    background-color: #dff2bf;
-    border-radius: 20px;
-
-}
-
-.falha{
-    display: none;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    padding:15px 2%;
-    width: 300px;
-    z-index: 999;
-    color: #800000;
-    font-weight: bold;
-    font-size: 14px;
-    background-color: #f2bfbf;
-    border-radius: 20px;
-}
-
-.overlay-loading{
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    background: rgba(0, 0, 0, 0);
-}
-.overlay-loading{
-    width: 48px; 
-    height: 48px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
-
-.center{
-    max-width: 1280px;
-    padding:  0 2%;
-    margin: 0 auto;
-}
-
-.w100{
-    
-    width: 100%;
-}
-
-.w50{
-    padding: 0 10px;
-    width: 50%;
-}
-
-.w33{
-    width: 33.3%;
-    padding: 0 10px;
 }
 
 .clear{
     clear: both;
 }
 
-.left{
-    float: left;
+html,body{
+    height: 100%;
 }
 
-.right{
-    float: right;
+input{
+    border: 0;
 }
+
+.container{
+    max-width: 1280px;
+    padding:0 2% ;
+    margin: 0 auto;
+}
+
+/* ESTILO DO PORTAL */
 
 header{
-   padding: 10px 0;
-    background-color: #ccc;
+    background-color:#4286f4;
+    padding: 8px 0;
 }
 
-
-.logo {
-
-    position: relative;
-    top: 8px;
-    font-size: 15px;
-    text-transform: uppercase;
-}
-
-.logo a{
-    text-decoration: none;
+header .logo{
+    float: left;
     color: white;
+    font-size: 23px;
 }
 
-.mobile{
-    display: none;
-    z-index: 91;
-    
-}
-
-
-.desktop {
-    position: relative;
-    top: 5px;
+nav.desktop{
+    float: right;
 }
 
 nav.desktop ul{
     list-style-type: none;
+    position: relative;
+    top: 4px;
 }
 
 nav.desktop li{
-    
-    font-size: 15px;
-    padding: 0 20px;
-    text-transform: uppercase;
+    font-size: 16px;
     display: inline-block;
+    padding: 0 15px;
+
 }
 
 nav.desktop a{
@@ -160,810 +69,93 @@ nav.desktop a{
     text-decoration: none;
 }
 
-.banner-container{
-    width: 100%;
-    height: 100%;
-    min-height: 650px;
-    position: relative;
-    
-    
+nav.desktop a:hover{
+    text-decoration: underline;
 }
 
-.banner-single{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-}
-
-
-
-
-.overlay{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(51, 51, 51, 0.7);
-    z-index: 1;
-}
-
-.banner-container form{
-    width: 93%;
-    max-width: 600px;
-    position: relative;
-    z-index: 2;
-    left: 50%;
-    
-    transform: translate(-50%,-190%);
-}
-
-section.banner-container form h2{
-    color: white;
-    font-size: 40px;
-    text-align: center;
-}
-
-section.banner-container form input[type=email]{
-    width: 100%;
-    height: 67px;
-    margin-top: 10px;
-    padding: 10px;
-    color: #333;
-    background: white;
-    font-size: 30px;
-    border-radius: 10px;
-    border: 0;
-
-}
-section.banner-container form input[type=submit]{
-    width: 100%;
-    height: 67px;
-    margin-top: 10px;
-    padding: 10px;
-    color: white;
-    background: #00c59e;
-    font-size: 30px;
-    border: 0;
-    cursor: pointer;
-    border-radius: 10px;
-
-
-}
-
-.descricao-wraper{
-    display: relative;
-    height: 1px;
-}
-
-
-.descricao-autor{
-    
-    z-index: 90;
-    width: 80%;
-    position: absolute;
-    top: 300px; 
-    left: 50%;
-    transform: translate(-50%,-50%);
-
-}
-
-.descricao-autor h2{
-    font-size: 35px;
-    font-weight: 400;
-    color: #ccc;
-    text-align: center;
-    
-}
-
-.descricao-autor p{
-    text-align: justify;
-    font-size: 19px;
-    color:#fffbfb;
-    
-
-}
-
-.descricao-autor img{
-    width: 160px;
-    height: 160px;
-    display: block;
-    margin: 15px auto;
-    border-radius: 50%;
-    
-}
-
-section.especialidades{
-    padding: 40px 0;
-    background: #e2e2e2;
-}
-
-.especialidades h2.title{
-
-    font-size: 30px;
-    text-align: center;
-    font-weight: 400;
-    color: #999;
-}
-
-.box-especialidade{
-    margin: 20px 0;
-    text-align: center;
-}
-
-.box-especialidade h3{
-    text-align: center;
-    color: #404580;
-    font-size: 40px;
-}
-
-.box-especialidade h4{
-    font-weight: 300;
-    color: #bababa;
-    text-align: center;
-    font-size: 25px;
-
-}
-
-.box-especialidade p{
-    color: #444;
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-section.extras{
-    padding: 30px;
-    background: #404580;
-}
-
-.depoimentos-container,.servicos-container{
-    padding: 0 50px;
-}
-
-.extras .title{
-    color: white;
-    font-weight: 300;
-    font-size: 25px;
-    margin-bottom: 15px;
-
-}
-
-.depoimentos-single{
-    padding: 15px;
-    border-bottom: 1px solid #5056a0;
-}
-
-p.depoimento-descricao{
-    font-size: 15px;
-    color: white;
-    font-weight: 300;
-}
-
-p.nome-autor{
-    font-size: 15px;
-    color: white;
-    margin-top: 5px;
-    font-weight: bold;
-}
-
-
-
-.servicos ul{
-    margin: 20px 0;
-    
-}
-
-.servicos li{
-    margin-bottom: 15px;
-    font-size: 15px;
-    color: white;
-    font-weight: 300;
-}
-
-
-footer{
-    background: #313462 ;
+section.search1{
+    background-color: rgb(178 191 245);
     padding: 30px 0;
-    width: 100%;
-    
-}
-
-footer p{
-    color: white;
-    text-align: center;
-    font-weight: 400;
-    font-size: 18px;
-}
-
-footer.fixed{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-
-
-nav.mobile li a{
-    display: block;
-    color: #444;
-    text-decoration: none;
-}
-
-.erro404{
-    
-     padding: 35px;
-}
-
-.erro404 h2{
-    text-align: center;
-    color: #444;
-    font-weight: 400;
-    font-size: 50px;
-    margin-top: 250px;
-    
-}
-
-.map{
-    width: 100%;
-    height: 400px;
-    border: 3px solid #313462;
-    border-radius: 100px;
-}
-
-.box{
-    background-color: rgba(47, 53, 100, 0.3);
-    width: 100%;
-    height: 400px;
-    z-index: 4;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    border-radius: 100px;
-}
-
-.contato-container{
-    
-    padding: 40px;
     text-align: center;
 }
 
-.contato-container input[type=text]{
-    margin: 8px 0;
-    width: 100%;
-    height: 40px;
-    padding-left: 8px;
-    font-size: 16px;
-    max-width: 800px;
-    color: #444;
-}
-
-.contato-container textarea{
-        padding: 8px;
-        margin: 8px 0;
-        width: 100%;
-        height: 120px;
-        padding-left: 8px;
-        font-size: 16px;
-        max-width: 800px;
-        color: #444;
-        resize: vertical;
-    
-    
-}
-
-.contato-container input[type=submit]{
-    background: #00c59e;
-    width: 140px;
-    height: 40px;
-    color: white;
-    border: 0;
-    cursor: pointer;
-
-}
-
-.bullets{
-    position: relative;
-    left: 46%;
-    /* top: 10px; */
-    bottom: 39px;
-    /* transform: translate(-50%,-50%); */
-    z-index: 10;
-}
-
-.bullets span{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: #313462;
-    margin: 0 10px;
-    
-    
-    
-}
-
-.bullets span.active-slider{
-    background-color: white ;
-}
-
-/* portal de noticias */
-
-.header-noticias{
-    width: 100%;
-    background-color: #333864;
-    padding: 40px 0;
-}
-
-.header-noticias h2:nth-of-type(1){
-    font-size: 41;
-    color: #f40b5c;
-}
-
-.header-noticias h2{
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: normal;
-}
-
-.container-portal{
-    padding: 50px 0;
-}
-
-.sidebar{
-    float: left;
-    width: 30%;
-}
-
-.box-content-sidebar{
-    width: 100%;
-    background: #dddddd;
-    padding: 15px;
-    color: #333864;
-}
-
-.box-content-sidebar{
-    font-size: 18px;
-    font-weight: normal;
-    margin-bottom: 20px;
-    border-radius: 20px;
-}
-.box-content-sidebar:last-of-type{
-    font-size: 18px;
-    font-weight: normal;
-    margin-bottom: 60px;
-    border-radius: 20px;
-}
-
-.box-content-sidebar input[type=text]{
-    width: 100%;
-    height: 40px;
-    border: 1px solid rgb(220, 220, 220);
-    padding-left: 8px;
-    margin: 10px 0;
-}
-
-.box-content-sidebar select{
-    width: 100%;
-    height: 40px;
-    border: 1px solid rgb(220, 220, 220);
-    padding-left: 8px;
-    margin: 10px 0;
-}
-
-.box-content-sidebar input[type=submit]{
-    cursor: pointer;
-    background: #f40b5c;
-    color: white;
-    width: 115px;
-    height: 35px;
-    border: 0;
-    margin: 10px 0;
-}
-
-.autor-box-portal{
-    margin-top: 10px;
-    text-align: center;
-}
-
-.box-img-autor{
-    width: 160px;
-    height: 160px;
-    background-size: 100% 100%;
-    display: inline-block;
-    margin: 20px 0;
-    overflow: hidden;
-}
-
-.box-img-autor img{
-    border-radius: 50%;
-    width: 100%;
-}
-
-.fonte-box{
-    font-size: 18px;
-}
-
-.autor-box-portal h3{}
-.autor-box-portal p{
-    color:#646464
-}
-
-.autor-box-portal p{
-    font-size: 14px;
-    margin-top: 8px;
-    font-weight: lighter;
-}
-
-.autor-box-portal a{
-    background: #00b95c;
-    display: block;
-    width: 100px;
-    height: 35px;
-    font-size: 15px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    line-height: 35px;
-    text-align: center;
-    padding:0 3px;
-    margin: 4px auto;
-
-}
-
-.conteudo-portal {
-    
-    float: left;
-    width: 70%;
-    padding-left: 50px;
-}
-.conteudo-portal:last-of-type {
-    margin-bottom: 200px;
-}
-
-.header-conteudo-portal{
-    color:#333864;
-    
-}
-
-.header-conteudo-portal h2{
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.header-conteudo-portal h2 > span{
-    border-bottom: 4px solid #333864;
-}
-
-.box-conteudo{
-    margin-top: 30px;
-    
-    border-radius: 10px;
-    
-}
-
-
-.img-box-conteudo{
-   float: left;
-   width: 40%;
-   text-align: center;
-   margin-top: 10px;
-   
-}
-.img-box-conteudo img{
-    
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    max-width: 300px;
-    
-    
-
-}
-
-.box-single-conteudo{
-    float: right;
-    width: 60%;
-    
-    
-    margin-top: 10px;
-    padding-left: 10px;
-    
-   
-    
-}
-
-.box-single-conteudo h2{
+section.search1 h2{
     color: #646464;
-    font-weight: normal;
-    font-size: 22px;
-   
-}
-.box-single-conteudo p{
-    color: #646464;
-    font-weight: normal;
-    font-size: 15px;
-    margin-top: 8px;
-}
-
-.box-single-conteudo a{
-    
-    display: block;
-    overflow: hidden;
-    
-    font-size: 29px;
-    text-decoration: none;
-    color: #4a4a4a;
-    font-weight: bold;
-    line-height: 35px;
-    padding:0 px;
-    
-
-}
-
-.line{
-    margin-top: 15px;
-    border-bottom: 1px solid #ccc;
-}
-
-.paginator{
-    text-align: center;
-
-}
-
-.paginator a{
-    margin: 0 15px;
-    display: inline-block;
-    padding: 6px 4px;
-    text-decoration: none;
-    border:1px solid rgb(220, 220, 220);
-    color: black;
-}
-
-.paginator a.active-page{
-    background:rgb(220, 220, 220); ;
-}
-
-/* Noticias single estilo */
-
-.noticia-single{
-    padding: 40px 0;
-    color: #646464;
-}
-
-.noticia-single header{
-    background-color: transparent;
-}
-
-.noticia-single h1{
     font-size: 30px;
-    border-bottom: 2px solid #646464 ;
+    font-weight: normal;
 }
 
-.noticia-single article{
-    margin-top:15px ;
-}
-
-.noticia-single ul{
-    list-style-position: inside;
-    margin: 10px 0;
-}
-
-.noticia-single h3{
-
-    margin-top: 30px;
-    font-size: 22px;
-    text-align: center;
-}
-.noticia-single h2{
-    font-size: 27px;
-    margin: 10px 0;
-
-}
-
-.noticia-single img{
-    margin: 20px 0;
-    display: block;
-    margin: 0 auto;
+section.search1 input[type=text]{
     width: 100%;
-    height: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    padding-left: 8px;
+    margin-top: 15px;
+    font-size: 17px;
 }
 
-.noticia-single p{
-    margin: 10px 0;
+.search2{
+    padding: 30px 0;
+    
+    background: rgb(178 191 245);
 }
 
-
-
-
-@media screen and (max-width: 1066px){
-
-    .box-single-conteudo{
-        float: right;
-        
-        position: relative;
-        
-        margin-top: 10px;
-    
-        
-       
-        
-    }
-
-    .img-box-conteudo{
-        float: left;
-        
-        text-align: right;
-        margin-top: 10px;
-     }
-     .img-box-conteudo img{
-         
-        
-         border-radius: 10px;
-         
-         
-     
-     }
-
+.form-group{
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+    margin-bottom: 10px;
 }
 
+.form-group label{
+    display: block;
+}
 
-@media screen and (max-width: 768px){
-    .bullets{
-        top: 272px;
-    }
-    
-   
-    
-    .banner-container{
-    z-index: 0;
-        height: 600px;
-    }
-    .conteudo-portal{
+.form-group input[type=text],
+.form-group input[type=number]{
+    padding-left:10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 40px;
+}
+
+.lista-imoveis{
+    padding:90px 0;
+}
+
+.lista-imoveis .row-imoveis{
+    display: flex;
+    background-color: rgb(225, 225, 225);
+    border-radius: 20px;
+
+    margin-bottom: 30px;
+}
+
+.r1{width: 30%;}
+.r1 img{max-width: 100%; display: block;}
+.r2{width: 70%;}
+
+.r2{
+    padding: 20px;
+    color: #646464;
+    font-size: 15px;
+}
+.r2 p{
+    border-bottom: 1px solid #646464;
+    padding: 8px 0;
+}
+
+.title-busca{
+    padding: 0px 0;
+    border-bottom: 2px solid #aaaaaa;
+    font-size: 22px;
+    font-weight: normal;
+    color: #646464;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .form-group{
         width: 100%;
-        padding-left: 0;
     }
-
-    .sidebar{
-        width: 100%;
-        text-align: center;
-    }
-    
-    img{
-        float: none !important;
-        display: block;
-        margin: 0 auto;
-        
-    }
-
-    
-    .w50{
-        padding: 20px;
-        width: 100%;
-    }
-    
-    .w33{
-        width: 100%;
-        padding: 20px;
-    }
-
-    .box-especialidade{
-        margin: 0;
-        padding: 40px 20px;
-    }
-
-    .servicos li{
-       padding: 0 3%;
-    }
-
-
-
-    nav.desktop{
-        display: none;
-    }
-    nav.mobile{
-        display: block;
-        z-index: 99;
-       
-    }
-
-    
-    .botao-menu-mobile{
-        font-size: 24px;
-        cursor: pointer;
-        color: white;
-    }
-
-    nav.mobile ul {
-       
-        top: 55px;
-        z-index: 7;
-        position: absolute;
-        left: 0;
-        display: block;
-        text-align: center;
-        width: 100%;
-    
-    }
-
-    nav.mobile li{
-        font-weight: 300;
-        font-size: 15px;
-        display: block;
-        background-color: white;
-        border-bottom: 1px solid #ccc;
-        font-size: 17px;
-        padding: 8px 0;
-    }
-
-
-    .descricao-autor{
-        z-index: 5;
-        width: 90%;
-        position: absolute;
-        top: 275px;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-    
-    .descricao-autor h2{
-        font-size: 25px;
-        font-weight: 400;
-        color: #ccc;
-        text-align: center;
-        
-    }
-    
-    .descricao-autor p{
-        margin-top: 10px;
-        font-size: 17px;
-        color:#fffbfb;
-        
-    
-    }
-    
-    .descricao-autor img{
-        width: 100px;
-        height: 100px;
-        display: block;
-        margin: 15px auto;
-        border-radius: 50%;
-        
-    }
-
-    .img-box-conteudo{
-        width: 100%;
-        
-       
-     }
-     
-     .box-single-conteudo{
-       
-        width: 100%;
-        
-
-     }
-     .box-single-conteudo a{
-        
-        margin-top: 20px;
-        
-        
-    }
-
-    @media screen and (max-width: 390px){
-        .banner-container{
-    
-            height: 800px;
-        }
-
-        .bullets{
-            top: 800px;
-        }
-    }
-
 }

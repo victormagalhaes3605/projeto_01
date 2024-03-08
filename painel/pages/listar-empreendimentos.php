@@ -15,18 +15,30 @@
         </form>
     </div><!--busca-->
         <?php 
-           		if(isset($_GET['deletar'])){
-                    //queremos deletar algum produto.
-                    $id = (int)$_GET['deletar'];
-                    $imagens = Msql::conectar()->prepare("SELECT * FROM `tb_admin.empreendimentos` WHERE id = $id");
-                    $imagens->execute();
-                    $imagens = $imagens->fetch();
+           			if(isset($_GET['deletar'])){
+                        //queremos deletar algum produto.
+                        $id = (int)$_GET['deletar'];
+                        $imagens = Msql::conectar()->prepare("SELECT `imagem` FROM `tb_admin.empreendimentos` WHERE id = $id");
+                        $imagens->execute();
+                        $imagens = $imagens->fetch();
                         @unlink(BASE_DIR_PAINEL.'/uploads/'.$imagens['imagem']);
-                    
-                    Msql::conectar()->exec("DELETE FROM `tb_admin.empreendimentos` WHERE id = $id");
-                    Painel::alert('sucesso',"O produto foi deletado do empreendimentos com sucesso!");
-                }
-
+            
+                        $imoveis = Msql::conectar()->prepare("SELECT * FROM `tb_admin.imoveis` WHERE empreend_id = $id");
+                        $imoveis->execute();
+                        $imoveis = $imoveis->fetchAll();
+                        foreach ($imoveis as $key => $value) {
+                            $imagens = Msql::conectar()->prepare("SELECT * FROM `tb_admin.imagens_imoveis` WHERE imovel_id = $value[id]");
+                            $imagens->execute();
+                            $imagens = $imagens->fetchAll();
+                            foreach ($imagens as $key2 => $value2) {
+                                @unlink(BASE_DIR_PAINEL.'/uploads/'.$value2['imagem']);
+                                Msql::conectar()->exec("DELETE FROM `tb_admin.imagens_imoveis` WHERE id = $value2[id]");
+                            }
+                        }
+                        Msql::conectar()->exec("DELETE FROM `tb_admin.imoveis` WHERE empreend_id = $id");
+                        Msql::conectar()->exec("DELETE FROM `tb_admin.empreendimentos` WHERE id = $id");
+                        Painel::alert('sucesso',"O empreendimento foi deletado com sucesso!");
+                    }
        
         ?>
 

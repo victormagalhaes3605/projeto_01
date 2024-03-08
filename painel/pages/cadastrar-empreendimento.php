@@ -21,8 +21,9 @@
                     }else{
                         //realizar cadastro e upload.
                         $idImagem = Painel::uploadFiles($imagem);
-                        $sql = Msql::conectar()->prepare("INSERT INTO `tb_admin.empreendimentos` VALUES (null,?,?,?,?,?)");
-                        $sql->execute(array($nome,$tipo,$preco,$idImagem,0));
+                        $slug = Painel::generateSlug($nome);
+                        $sql = Msql::conectar()->prepare("INSERT INTO `tb_admin.empreendimentos` VALUES (null,?,?,?,?,?,?)");
+                        $sql->execute(array($nome,$tipo,$preco,$idImagem,$slug,0));
                         $lastId = Msql::conectar()->lastInsertId();
                         Msql::conectar()->exec("UPDATE `tb_admin.empreendimentos`SET order_id = $lastId WHERE id = $lastId");
                         Painel::alert('sucesso','cadastro do empreendimento foi feito com sucesso!');

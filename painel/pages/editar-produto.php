@@ -21,7 +21,7 @@ $pegaImagens = $pegaImagens->fetchAll();
         <?php 
             if(isset($_GET['deletarImagem'])){
             $idImagem = $_GET['deletarImagem'];
-            @unlink(BASE_DIR_PAINEL.'/upload/'.$idImagem);
+            @unlink(BASE_DIR_PAINEL.'/uploads/'.$idImagem);
             Msql::conectar()->exec("DELETE FROM `tb_admin.estoque_imagens` WHERE imagem = '$idImagem'");
             Painel::alert('sucesso','A imagem foi deletada com sucesso!'); 
             $pegaImagens = Msql::conectar()->prepare("SELECT * FROM `tb_admin.estoque_imagens` WHERE produto_id = $id");

@@ -34,6 +34,16 @@
                 return $str;
             }
 
+            public static function convertMoney($valor){
+                return number_format($valor, 2, ',', '.');
+            }
+
+            public static function formatarMoedasBd($valor){
+                $valor = str_replace('.', '', $valor);
+			    $valor = str_replace(',', '.',$valor);
+            return $valor;
+            }
+
             public static function logado(){
                 return isset($_SESSION['login']) ? true : false;
             }
@@ -92,6 +102,10 @@
                     echo '<div class="box-alert atencao"> <i class="fa fa-times"></i>'.'   '.$mensagem.'</div>';
                 }
 
+            }
+
+            public static function alertJS($msg){
+                echo '<script>alert("'.$msg.'")</script>';
             }
 
             public static function imagemValida($imagem){

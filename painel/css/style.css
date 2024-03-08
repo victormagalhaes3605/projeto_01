@@ -858,6 +858,10 @@ section.produtos-div .body-box {
 }
 
 @media screen and (max-width: 1224px){
+    .row1,.row2{
+        width: 100%;
+    }
+
     .box-metrica-single{
         width: 100%;
     }
@@ -891,6 +895,8 @@ section.produtos-div .body-box {
 
 
 @media screen and (max-width: 768px) {
+   
+
     .content{
         width: 100%;
         left: 0;
