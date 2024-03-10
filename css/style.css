@@ -34,6 +34,11 @@ input{
     margin: 0 auto;
 }
 
+
+a{
+    color: white;
+    text-decoration: none;
+}
 /* ESTILO DO PORTAL */
 
 header{

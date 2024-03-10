@@ -1,3 +1,7 @@
+<?php 
+$parametros = \views\mainView::$par;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,7 @@
 
 <header>
     <div class="container">
-    <div class="logo">Portao Imobi</div>
+    <div class="logo"><a href="<?php echo INCLUDE_PATH ?>">Portal Imoveis</a></div>
 
     <nav class="desktop">
         <ul>
@@ -45,11 +49,11 @@
         <form action="<?php echo INCLUDE_PATH ?>ajax/formularios.php" method="post">
             <div class="form-group">
                 <label >Area minima: </label>
-                <input type="number" name="area_minima" id="">
+                <input type="number" name="area_min" id="">
             </div><!--form-group-->
             <div class="form-group">
                 <label >Area máxima: </label>
-                <input type="number" name="area_maxima" id="">
+                <input type="number" name="area_max" id="">
             </div><!--form-group-->
             <div class="form-group">
                 <label >Preço minimo: </label>
@@ -59,6 +63,13 @@
                 <label >Preço máximo: </label>
                 <input  name="preco_max" type="text">
             </div><!--form-group-->
+            <?php 
+                
+                    if(isset($parametros['slug_empreendimento'])){
+                        echo '<input type="hidden" name="slug_empreendimento" value="'.$parametros['slug_empreendimento'].'" />';
+                    }
+                
+            ?>
             <div class="clear"></div>
         </form>
     </div>

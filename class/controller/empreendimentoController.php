@@ -4,8 +4,11 @@ namespace controller;
 final class empreendimentoController
 {
     public function index($par){
-        \views\mainView::setParam(['imoveis'=>\models\homeModel::pegaImoveis()]);
-        \views\mainView::render('empreendimentos.php');
+        $idEmpreendimento = \Msql::conectar()->prepare("SELECT id,nome FROM `tb_admin.empreendimentos` WHERE slug = '$par[1]'");
+			$idEmpreendimento->execute();
+			$idEmpreendimento = $idEmpreendimento->fetch();
+            \views\mainView::setParam(['nome_empreendimento'=>$idEmpreendimento['nome'],'slug_empreendimento'=>$par[1],'imoveis'=>\models\empreendimentoModel::pegaImoveis($idEmpreendimento['id'])]);
+			\views\mainView::render('empreendimentos.php');
     }
 }
 ?>
