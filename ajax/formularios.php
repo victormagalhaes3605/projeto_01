@@ -28,12 +28,14 @@ include('../config.php');
 		$infoEmpreendimento = \Msql::conectar()->prepare("SELECT * FROM `tb_admin.empreendimentos` WHERE slug = ?");
 		$infoEmpreendimento->execute(array($slug_empreendimento));
 		$infoEmpreendimento = $infoEmpreendimento->fetch();
-		$sql = \Msql::conectar()->prepare("SELECT `tb_admin.imoveis`.* FROM `tb_admin.imoveis` WHERE (preco >= ? AND 
+		$sql = \Msql::conectar()->prepare("SELECT * FROM `tb_admin.imoveis` WHERE (preco >= ? AND 
 			preco <= ?) AND (area >= ? AND area <= ?) AND nome LIKE ? AND empreend_id = ?");
 		$sql->execute(array($preco_min,$preco_max,$area_min,$area_max,"%$nome_imovel%",$infoEmpreendimento['id']));
 		$imoveis = $sql->fetchAll();
+		print($imoveis);
 
 		$data.='<h2 class="title-busca">Listando <b>'.count($imoveis).' imóveis</b> em '.$infoEmpreendimento['nome'].'</h2>';
+         
 		
 		foreach ($imoveis as $key => $value) {
 			$imagem = \Msql::conectar()->prepare("SELECT imagem FROM `tb_admin.imagens_imoveis` WHERE imovel_id = $value[id]");
@@ -45,7 +47,7 @@ include('../config.php');
 				</div>
 				<div class="r2">
 					<p><i class="fa fa-info"></i> Nome do imóvel: '.$value['nome'].'</p>
-					<p><i class="fa fa-info"></i> Área: '.$value['area'].'m2</p>
+					<p><i class="fa fa-info"></i> Área: '.$value['area'].'m²</p>
 					<p><i class="fa fa-info"></i> Preço: R$'.\Painel::convertMoney($value['preco']).'</p>
 				</div>
 			</div><!--row-imoveis-->';
@@ -70,12 +72,16 @@ include('../config.php');
 			$area_max = 0;
 		}
 		$nome_imovel = $_POST['nome_imovel'];
-		$sql = \Msql::conectar()->prepare("SELECT `tb_admin.imoveis`.* FROM `tb_admin.imoveis` WHERE `tb_admin.imoveis`.`preco` >= ? AND 
+		$sql = \Msql::conectar()->prepare("SELECT * FROM `tb_admin.imoveis` WHERE `tb_admin.imoveis`.`preco` >= ? AND 
 			`tb_admin.imoveis`.`preco` <= ? AND `tb_admin.imoveis`.`area` >= ? AND `tb_admin.imoveis`.`area` <= ? AND `tb_admin.imoveis`.`nome` LIKE ?");
 		$sql->execute(array($preco_min,$preco_max,$area_min,$area_max,"%$nome_imovel%"));
 		$imoveis = $sql->fetchAll();
+
+        print_r($imoveis);
 		
 		$data.='<h2 class="title-busca">Listando <b>'.count($imoveis).' imóveis</b></h2>';
+
+       
 		/*
 		<div class="row-imoveis">
 	<div class="r1">
@@ -98,7 +104,7 @@ include('../config.php');
 				</div>
 				<div class="r2">
 					<p><i class="fa fa-info"></i> Nome do imóvel: '.$value['nome'].'</p>
-					<p><i class="fa fa-info"></i> Área: '.$value['area'].'m2</p>
+					<p><i class="fa fa-info"></i> Área: '.$value['area'].'m²</p>
 					<p><i class="fa fa-info"></i> Preço: R$'.\Painel::convertMoney($value['preco']).'</p>
 				</div>
 			</div><!--row-imoveis-->';
@@ -107,6 +113,6 @@ include('../config.php');
 	}
 
 
-    echo $data
+    echo $data;
 	
  ?>

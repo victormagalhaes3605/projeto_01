@@ -1,5 +1,7 @@
 <?php
+
     class Site{
+        
         public static function updateUsuarioOnline(){
             if(isset($_SESSION['online'])){
                 $token = $_SESSION['online'];

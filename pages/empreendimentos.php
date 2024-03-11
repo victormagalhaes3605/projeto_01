@@ -22,7 +22,7 @@ $parametros = \views\mainView::$par;
      </div>
      <div class="r2">
          <p><i class="fa fa-info"></i> Nome do imóvel: <?php echo $value['nome'] ?></p>
-         <p><i class="fa fa-info"></i> Área: <?php echo $value['area'] ?>²</p>
+         <p><i class="fa fa-info"></i> Área: <?php echo $value['area'] ?> m²</p>
          <p><i class="fa fa-info"></i> Preço: <?php echo \Painel::convertMoney($value['preco']); ?></p>
         
      </div>
