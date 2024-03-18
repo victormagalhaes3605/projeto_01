@@ -19,7 +19,7 @@ include('../../includeConstant.php');
         
         if(isset($id_user)){
             echo '<div  style="text-align: right;" class="mensagem-chat">
-            <span >'.$nome.':</span>
+            <span style="background-color:green;">'.$nome.':</span>
             <p>'.$mensagem.'</p>
             </div><!--mensagem-chat-->';
             $_SESSION['lastIdChat'] = Msql::conectar()->lastInsertId();
@@ -39,7 +39,7 @@ include('../../includeConstant.php');
         $nomeUsuario->execute();
         $nomeUsuario = $nomeUsuario->fetch()['nome'];
           
-            echo '<div ;" class="mensagem-chat">
+            echo '<div " class="mensagem-chat">
             <span>'.$nomeUsuario.':</span>
 			<p>'.$value['mensagem'].'</p>
             </div><!--mensagem-chat-->';
