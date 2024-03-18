@@ -1,13 +1,12 @@
 <?php  
 
-    session_start();
-    date_default_timezone_set('America/Sao_Paulo');
-    $autoload = function ($class) {
-        if ($class == 'Email') {
-        require('vendor/autoload.php');
-        }
-        include('class/' . $class . '.php');
-        };
+session_start();
+$autoload = function ($class) {
+    if ($class == 'Email') {
+    require('vendor/autoload.php');
+    }
+    include('class/' . $class . '.php');
+    };
         
         
         spl_autoload_register($autoload);

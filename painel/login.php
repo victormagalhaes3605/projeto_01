@@ -8,6 +8,7 @@
                 $info = $sql->fetch();
                 $_SESSION['login'] = true;
                 $_SESSION['user'] = $user;
+                $_SESSION['id_user'] = $info['id'];
                 $_SESSION['password'] = $password;
                 $_SESSION['cargo'] = $info['cargo'];
                 $_SESSION['nome'] = $info['nome'];
@@ -40,6 +41,7 @@
                     $info = $sql->fetch();
                     $_SESSION['login'] = true;
                     $_SESSION['user'] = $user;
+                    $_SESSION['id_user'] = $info['id'];
                     $_SESSION['password'] = $password;
                     $_SESSION['cargo'] = $info['cargo'];
                     $_SESSION['nome'] = $info['nome'];

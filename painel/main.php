@@ -87,8 +87,12 @@
                 </div><!--menu-btn-->
 
                 <div class="loggout">
+                    
                     <div class="pg_inicial left">
-                        <a href="<?php echo INCLUDE_PATH_PAINEL ?>?"><i class="fa fa-home"></i>  <span>Pagina inicial</span>   </a>
+                        <a href="<?php echo INCLUDE_PATH_PAINEL ?>chat"><i class="fa fa-comments"></i>  <span>Chat</span>   </a>
+                    </div>
+                    <div class="pg_inicial left">
+                        <a href="<?php echo INCLUDE_PATH_PAINEL ?>"><i class="fa fa-home"></i>  <span>Pagina inicial</span>   </a>
                     </div>
                     <div class="pg_sair right">
                         <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fa fa-window-close"></i>  <span>Sair</span>   </a>
@@ -134,6 +138,8 @@
 <?php Painel::loadJs(array('ajax.js'),'cadastrar-clientes'); ?>
 <?php Painel::loadJs(array('ajax.js'),'editar-cliente'); ?>
 <?php Painel::loadJs(array('controleFinanceiro.js'),'editar-cliente'); ?>
+<?php Painel::loadJs(array('empreendimentos.js'),'listar-empreendimentos'); ?>
+<?php Painel::loadJs(array('chat.js'),'chat'); ?>
 
 </body>
 </html>

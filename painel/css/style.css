@@ -894,6 +894,37 @@ section.produtos-div .body-box {
 }
 
 
+/*      CHAT ONLINE         */
+
+.box-chat-online{
+    margin: 20px 0;
+    height: 400px;
+    padding: 40px 10px 20px 10px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+}
+
+.mensagem-chat{
+    padding: 8px 0;
+    border-bottom: 1px dotted rgb(210 , 210, 210) ;
+}
+
+.mensagem-chat span{
+    background: #0091ea;
+    padding: 0 10px;
+    border-radius: 10px;
+    color: white;
+   
+    text-align: left;
+}
+.mensagem-chat p {
+    font-size: 17px;
+    color: #646464;
+    margin-top: 6px;
+    padding-left: 6px;
+}
+
+
 @media screen and (max-width: 768px) {
    
 

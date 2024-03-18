@@ -7,7 +7,7 @@ $autoload = function($class){
     if($class == 'Email'){
         require('vendor/autoload.php');
     }
-    include('classes/'.$class.'.php');
+    include('class/'.$class.'.php');
 };
 
 
